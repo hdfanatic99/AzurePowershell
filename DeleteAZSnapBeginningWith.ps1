@@ -3,8 +3,8 @@ $subscriptionName = "Azure subscription 1"
 # Set the subscription context
 Set-AzContext -SubscriptionName $subscriptionName
 
-# Get all snapshots in the subscription
-$snapshots = Get-AzSnapshot -ResourceGroupName * | Where-Object { $_.Name.StartsWith("Veeam") }
+# Get all snapshots in the subscription.  Update line #7 with your naming convention
+$snapshots = Get-AzSnapshot -ResourceGroupName * | Where-Object { $_.Name.StartsWith("xxxxxx") }
 
 # Start jobs to delete snapshots concurrently
 $jobs = @()
